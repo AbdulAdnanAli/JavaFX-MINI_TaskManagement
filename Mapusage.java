@@ -20,20 +20,27 @@ public class Mapusage{
             System.out.println("Student not found");
         }
         Maps.remove(106); 
-        int highestMarks=Integer.MIN_VALUE;
-        int highRoll=-1;
+        // int highestMarks=Integer.MIN_VALUE;
+        // int highRoll=-1;
         System.out.println("print all the student marks: ");
-        System.out.println();
+        int countPass=0;
+        int countFail=0;
         for(Map.Entry<Integer ,Integer> i : Maps.entrySet()){
                 //  System.out.println("Roll: " + i.getKey() + ", Marks : " + i.getValue());
-                if(i.getValue() > highestMarks){
-                   highestMarks=i.getValue();
-                   highRoll=i.getKey();
+                // if(i.getValue() > highestMarks){
+                //    highestMarks=i.getValue();
+                //    highRoll=i.getKey();
                     
+                // }
+                if(i.getValue() >=40){
+                    countPass++;
+                }
+                else{
+                    countFail++;
                 }
 
         }
-        System.out.println("The roll number of the student is :" + highRoll +" with highest marks : " + highestMarks);
+        System.out.println("The  number of the students Pass  are :" + countPass +"\n The no.of Students Fail are : " + countFail);
 
     }
 }
